@@ -1,3 +1,4 @@
+
 .jumbotron {
   background-image: url('./images/escape.png');
   height: 700px;
@@ -63,6 +64,34 @@
   right: 0;
 }
 
+#outside-room {
+  font-size: 20px;
+}
+
+button {
+  background-color: lightblue;
+  padding: 1px 3px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: maroon;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  box-shadow: 2px 2px grey;
+  margin-left: 7px;
+}
+button:hover {
+  background-color: maroon;
+  color: lightblue;
+}
+button:active {
+  background-color: maroon;
+  color: skyblue;
+  box-shadow: 5px 5px #666;
+  transform: translateY(4px);
+}
 #room {
   border-right: solid;
   border-color: black;
@@ -73,7 +102,19 @@
 }
 
 #timer{
-  width: 100%;
+  width: 30%;
+  font-size: 50px;
+  background-color: black;
+  padding: 1px 3px;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  box-shadow: 2px 2px grey;
+  margin-left: 7px;
 }
 
 

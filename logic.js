@@ -77,7 +77,7 @@ $(document).ready(function() {
       $form.append("<div id = codeCheck>Enter 6-digit code: <input class = 'checkCode' type = 'numeric' maxlength = '6' size = '6'></input></div>");
       $("#user-images").html($form);
       $button = $("<button type = 'submit'>Enter</button>");
-      $button.addClass("enterCode mt-2");
+      $button.addClass("enterCode mt-2 mb-2");
       $("#user-images").append($button);
       var bigAssBox = new Image(250,250);
         bigAssBox.classList.add("thisPic");
