@@ -91,7 +91,7 @@ $(document).ready(function() {
         console.log(userGuess);
         if (theAnswer === userGuess) {
           $("#user-images").empty();
-          $("#user-images").append("<br/>Correct! The box opens and you find this picture inside:");
+          $("#user-message").html("<br/>Correct! The box opens and you find this picture inside:");
           var foodChainImage = new Image(250,250);
           foodChainImage.classList.add("thisPic");
           foodChainImage.src = ("./images/foodChain.png");
