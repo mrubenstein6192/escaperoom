@@ -80,6 +80,7 @@ $(document).ready(function() {
       $button = $("<button type = 'submit'>Enter</button>");
       $button.addClass("enterCode mt-2 mb-2");
       $("#user-images").append($button);
+      $(".checkCode").focus();
       var bigAssBox = new Image(250,250);
         bigAssBox.classList.add("thisPic");
         bigAssBox.src = ("./images/bigassbox.png");
@@ -127,7 +128,7 @@ $(document).ready(function() {
       $blank5.addClass("blankGuess5");
       $blank5.append("<div id = fifthGuess><input class = 'checkGuess5' type = 'text' ></input></div>");
       $("#user-images").append($blank5);
-
+      $(".checkGuess").focus();
 
       $button3 = $("<button type = 'submit'>Enter</button>");
       $button3.addClass("submitGuess10 mt-2");
@@ -224,7 +225,7 @@ $(document).ready(function() {
       $missingNumber.addClass("numberGuess");
       $missingNumber.append("<div id = numGuess><input class = 'checkNumberGuess' type = 'numeric' maxlength='3' size = '3'></input></div>");
       $("#user-message").append($missingNumber);
-
+      $(".checkNumberGuess").focus();
 
       $button11 = $("<button type = 'submit'>Enter</button>");
       $button11.addClass("submitNumGuess mt-2");
@@ -303,8 +304,9 @@ $(document).ready(function() {
 
       $form2 = $("<form autocomplete = 'off'></form>");
       $form2.addClass("guessForm2");
-      $form2.append("<div id = codeCheck2>Enter 6-digit code: <input class = 'checkCode2' type = 'numeric' maxlength = '5' size = '5'></input></div>");
+      $form2.append("<div id = codeCheck2>Enter code: <input class = 'checkCode2' type = 'numeric' maxlength = '5' size = '5'></input></div>");
       $("#user-message").append($form2);
+      $('.checkCode2').focus();
       $button2 = $("<button type = 'submit'>Enter</button>");
       $button2.addClass("enterCode2 mt-2");
       $("#user-message").append($button2);
