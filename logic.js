@@ -279,7 +279,7 @@ $(document).ready(function() {
       }
       else {
         $("#user-message").html("The box is opened now!")
-        var cipherImage = new Image(350,150);
+        var cipherImage = new Image(450,250);
         cipherImage.classList.add("thisPic");
         cipherImage.src = ("./images/cipher.png");
         $("#user-message").append(cipherImage);
