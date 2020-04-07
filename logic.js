@@ -3,6 +3,7 @@ $(document).ready(function() {
   var intervalId;
   var clockRunning = false;
   var isPerfectNumberSolved = false;
+  var isRugClicked = false;
   $("#main-container").hide();
   $("#picture").hide();
   $(document).on("click", ".start", function() {
@@ -162,11 +163,19 @@ $(document).ready(function() {
      
     })
     $("#rug").on("click", function() {
+      if (isRugClicked === false) {
       $("#user-message").html("You looked under the rug!<br>You found a key!");
       var keyImage = new Image(250,250);
         keyImage.classList.add("thisPic");
         keyImage.src = ("./images/key.png");
         $("#user-images").html(keyImage);
+        
+      }
+      else {
+        $("#user-message").html("There's nothing else under this rug.");
+        $("#user-images").empty();
+      }
+      isRugClicked = true
     })
     // $("#object7").on("click", function() {
     //   $("#user-message").html("You clicked on Object 7");
@@ -294,13 +303,13 @@ $(document).ready(function() {
 
       $form2 = $("<form autocomplete = 'off'></form>");
       $form2.addClass("guessForm2");
-      $form2.append("<div id = codeCheck2>Enter 6-digit code: <input class = 'checkCode2' type = 'numeric' maxlength = '6' size = '6'></input></div>");
+      $form2.append("<div id = codeCheck2>Enter 6-digit code: <input class = 'checkCode2' type = 'numeric' maxlength = '5' size = '5'></input></div>");
       $("#user-message").append($form2);
       $button2 = $("<button type = 'submit'>Enter</button>");
       $button2.addClass("enterCode2 mt-2");
       $("#user-message").append($button2);
       $(".enterCode2").on("click", function() {
-        var theAnswer2 = "654321";
+        var theAnswer2 = "96411";
         var userGuess2 = $(".checkCode2").val();
         console.log(theAnswer2);
         console.log(userGuess2);
