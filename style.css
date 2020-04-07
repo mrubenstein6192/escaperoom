@@ -131,6 +131,23 @@
   color: black;
 }
 
+#picture {
+  border-style: solid;
+  border-color: black;
+  width:60px;
+  height:30px;
+  margin-left: 77px;
+  background-color: rgb(206, 22, 206);
+  color: black;
+  justify-content: center;
+  padding-top: 3px;
+  font-size: 13px;
+}
+
+#picture:hover{
+  background-color: yellow;
+  color: black;
+}
 #door {
   /* border-style: solid;
  

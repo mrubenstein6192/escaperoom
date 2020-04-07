@@ -202,9 +202,33 @@ $(document).ready(function() {
       $("#user-message").html("You clicked on Object 9");
       $("#user-images").html("A Pic will Show Here")
     })
-    $("#object10").on("click", function() {
-      $("#user-message").html("You clicked on Object 10");
-      $("#user-images").html("A Pic will Show Here")
+    $("#picture").on("click", function() {
+      $("#user-message").html("Well, it's just a picture of some numbers.<br/>Think you can fill in the missing one?");
+      $missingNumber = $("<form autocomplete = 'off'></form>");
+      $missingNumber.addClass("numberGuess");
+      $missingNumber.append("<div id = numGuess><input class = 'checkNumberGuess' type = 'numeric' maxlength='3' size = '3'></input></div>");
+      $("#user-message").append($missingNumber);
+
+
+      $button11 = $("<button type = 'submit'>Enter</button>");
+      $button11.addClass("submitNumGuess mt-2");
+      $("#user-message").append($button11);
+      var numberImage = new Image(250,150);
+        numberImage.classList.add("thisPic");
+        numberImage.src = ("./images/numberPuzzle.png");
+        $("#user-images").html(numberImage);
+
+        $(".submitNumGuess").on("click", function() {
+          var numberAnswer = "28";
+          var userNumberAnswer = $(".checkNumberGuess").val();
+          console.log(userNumberAnswer);
+          if (userNumberAnswer === numberAnswer) {
+            $("#user-message").html("BANG! Something new appeared in the room!<br/>Must be important!");
+          }
+          else {
+            $("#user-message").append("<br/>Nope.  Maybe just Google It.");
+          }
+        })
     })
     $("#object11").on("click", function() {
       $("#user-message").html("You clicked on Object 11");
