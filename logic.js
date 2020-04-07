@@ -243,11 +243,12 @@ $(document).ready(function() {
       $noButton2.addClass("no2 mt-2");
       $("#user-images").append($noButton2);
       $(".yes2").on("click", function() {
-        $("#user-images").append("<br/>HA! That didn't do anything...Onwards!");
-    
+        $("#user-message").html("<br/>HA! That didn't do anything...Onwards!");
+      $("#user-images").html("Wait! I heard something! Sounded like something opened...")
       })
       $(".no2").on("click", function() {
-        $("#user-images").html("Damn, you called my bluff. Onwards!")
+        $("#user-message").html("Damn, you called my bluff. Onwards!")
+        $("#user-images").html("Wait! I heard something! Sounded like something opened...")
       })
           }
           else {
@@ -267,6 +268,11 @@ $(document).ready(function() {
       }
       else {
         $("#user-message").html("The box is opened now!")
+        var cipherImage = new Image(350,150);
+        cipherImage.classList.add("thisPic");
+        cipherImage.src = ("./images/cipher.png");
+        $("#user-message").append(cipherImage);
+        $("#user-images").empty();
       }
     })
   
@@ -293,7 +299,7 @@ $(document).ready(function() {
       $button2.addClass("enterCode2 mt-2");
       $("#user-message").append($button2);
       $(".enterCode2").on("click", function() {
-        var theAnswer2 = "111111";
+        var theAnswer2 = "654321";
         var userGuess2 = $(".checkCode2").val();
         console.log(theAnswer2);
         console.log(userGuess2);
