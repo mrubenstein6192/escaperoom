@@ -2,7 +2,9 @@ $(document).ready(function() {
   var counter = 1800;
   var intervalId;
   var clockRunning = false;
+  var isPerfectNumberSolved = false;
   $("#main-container").hide();
+  $("#picture").hide();
   $(document).on("click", ".start", function() {
     start();
     run();
@@ -143,7 +145,8 @@ $(document).ready(function() {
       var fifthUserGuess = $('.checkGuess5').val().trim().toLowerCase();
 
       if (firstUserGuess === firstAnswer && secUserGuess === secondAnswer && thirdUserGuess === thirdAnswer && fourthAnswer === fourthUserGuess && fifthUserGuess === fifthAnswer) {
-        $("#user-images").html("Wow! You got it!")
+        $("#user-images").html("Wow! You got it! Something new appeared in the room!")
+        $("#picture").show();
       }
         else {
           $("#user-images").append("<br/>Not quite right. Try again!");
@@ -198,9 +201,12 @@ $(document).ready(function() {
         $("#user-images").append(deskImage);
       
     })
-    $("#object9").on("click", function() {
-      $("#user-message").html("You clicked on Object 9");
-      $("#user-images").html("A Pic will Show Here")
+    $("#shelf").on("click", function() {
+      $("#user-message").html("The shelf has a message:");
+      var invertImage = new Image(250,150);
+      invertImage.classList.add("thisPic");
+      invertImage.src = ("./images/inversion.png");
+      $("#user-images").html(invertImage);
     })
     $("#picture").on("click", function() {
       $("#user-message").html("Well, it's just a picture of some numbers.<br/>Think you can fill in the missing one?");
@@ -223,17 +229,47 @@ $(document).ready(function() {
           var userNumberAnswer = $(".checkNumberGuess").val();
           console.log(userNumberAnswer);
           if (userNumberAnswer === numberAnswer) {
-            $("#user-message").html("BANG! Something new appeared in the room!<br/>Must be important!");
+            isPerfectNumberSolved = true;
+            $("#user-message").html("BANG! A new message just appeared in place of the numbers:");
+            var numberImage2 = new Image(250,150);
+            numberImage2.classList.add("thisPic");
+            numberImage2.src = ("./images/message.png");
+            $("#user-images").html(numberImage2);
+            $("#user-images").append("Did they do it?<br/>");
+            $yesButton2 = $("<button type = 'submit'>Yes</button>");
+      $yesButton2.addClass("yes2 mt-2 mr-2");
+      $("#user-images").append($yesButton2);
+      $noButton2 = $("<button type = 'submit'>No</button>");
+      $noButton2.addClass("no2 mt-2");
+      $("#user-images").append($noButton2);
+      $(".yes2").on("click", function() {
+        $("#user-images").append("<br/>HA! That didn't do anything...Onwards!");
+    
+      })
+      $(".no2").on("click", function() {
+        $("#user-images").html("Damn, you called my bluff. Onwards!")
+      })
           }
           else {
             $("#user-message").append("<br/>Nope.  Maybe just Google It.");
           }
         })
     })
-    $("#object11").on("click", function() {
-      $("#user-message").html("You clicked on Object 11");
-      $("#user-images").html("A Pic will Show Here")
+    $("#littleBox").on("click", function() {
+      var metalBox = new Image(250,250);
+      metalBox.classList.add("thisPic");
+      metalBox.src = ("./images/metalBox.png");
+      $("#user-images").html(metalBox);
+
+      if (isPerfectNumberSolved === false) {
+        console.log("Not ready to open");
+      $("#user-message").html("This Box Won't Seem to Open. There's no key-hole or number pad...WTF");
+      }
+      else {
+        $("#user-message").html("The box is opened now!")
+      }
     })
+  
     $("#object12").on("click", function() {
       $("#user-message").html("You clicked on Object 12");
       $("#user-images").html("A Pic will Show Here")
