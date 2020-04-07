@@ -78,6 +78,23 @@
   color: black;
 }
 
+#bluePoster {
+  border-style: solid;
+  border-color: black;
+  width:40px;
+  height:80px;
+  margin-left: 20px;
+  background-color: blue;
+  color: white;
+}
+#rotateText{
+  transform: rotate(270deg);
+  margin-left: 20px;
+}
+#bluePoster:hover {
+  background-color: yellow;
+  color: black;
+}
 #door {
   /* border-style: solid;
  

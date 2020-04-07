@@ -46,7 +46,7 @@ $(document).ready(function() {
     $("#welcome").hide();
     $("#main-container").show();
     $("#poster1").on("click", function() {
-      $("#user-message").html("You are looking at Poster 1.");
+      $("#user-message").html("You are looking at a 'Red' Poster.");
       var poster1Image = new Image(250,250);
       poster1Image.classList.add("thisPic");
       poster1Image.src = ("./images/poster1.png");
@@ -83,7 +83,11 @@ $(document).ready(function() {
         console.log(userGuess);
         if (theAnswer === userGuess) {
           $("#user-images").empty();
-          $("#user-images").append("<br/>Correct! Here's a thing for a new clue.")
+          $("#user-images").append("<br/>Correct! The box opens and you find this picture inside:");
+          var foodChainImage = new Image(250,250);
+          foodChainImage.classList.add("thisPic");
+          foodChainImage.src = ("./images/foodChain.png");
+          $("#user-images").append(foodChainImage);
           $("#box1").css("background-color", "black");
           $("#box1").css("color", "black");
         } 
@@ -92,9 +96,13 @@ $(document).ready(function() {
         }
       })
     })
-    $("#object5").on("click", function() {
-      $("#user-message").html("You clicked on Object 5");
-      $("#user-images").html("A Pic will Show Here")
+    $("#bluePoster").on("click", function() {
+      $("#user-message").html("You are looking at the 'Blue' Poster<br/>Hmmm...Da fuq?");
+        var bluePosterImage = new Image(250,250);
+        bluePosterImage.classList.add("thisPic");
+        bluePosterImage.src = ("./images/bluePoster.png");
+        $("#user-images").append(bluePosterImage);
+     
     })
     $("#object6").on("click", function() {
       $("#user-message").html("You clicked on Object 6");
