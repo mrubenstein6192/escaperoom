@@ -46,6 +46,7 @@ $(document).ready(function() {
 
   function start() {
     $("#welcome").hide();
+    $(".jumbotron").hide();
     $("#main-container").show();
     $("#poster1").on("click", function() {
       $("#user-message").html("You are looking at a 'Red' Poster.");
