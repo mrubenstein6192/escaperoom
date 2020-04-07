@@ -1,0 +1,39 @@
+#room {
+  border-right: solid;
+  border-color: black;
+  background-image: url("./images/room.png");
+  
+  height: 650px;
+  background-repeat: no-repeat;
+}
+
+#timer{
+  width: 100%;
+}
+
+#poster1 {
+  border-style: solid;
+  border-radius: 3px;
+  border-color: black;
+  width:50px;
+  margin-left: 200px;
+  margin-top: 10px;
+}
+#object2 {
+  border-style: solid;
+  border-radius: 3px;
+  border-color: black;
+  width:50px;
+  margin-left: 200px;
+  margin-top: 15px;
+}
+
+#object3 {
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  width:60px;
+  height:60px;
+  margin-left: 100px;
+  margin-top: 15px;
+}
