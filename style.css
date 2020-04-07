@@ -113,6 +113,24 @@
   color: black;
 }
 
+#desk {
+  border-style: solid;
+  border-color: black;
+  width:60px;
+  height:60px;
+  margin-left: 77px;
+  background-color: rgb(68, 26, 3);
+  color: white;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 11px;
+}
+
+#desk:hover {
+  background-color: yellow;
+  color: black;
+}
+
 #door {
   /* border-style: solid;
  

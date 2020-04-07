@@ -76,6 +76,10 @@ $(document).ready(function() {
       $button = $("<button type = 'submit'>Enter</button>");
       $button.addClass("enterCode mt-2");
       $("#user-images").append($button);
+      var bigAssBox = new Image(250,250);
+        bigAssBox.classList.add("thisPic");
+        bigAssBox.src = ("./images/bigassbox.png");
+        $("#user-images").append(bigAssBox);
       $(".enterCode").on("click", function() {
         var theAnswer = "012447";
         var userGuess = $(".checkCode").val();
@@ -87,7 +91,7 @@ $(document).ready(function() {
           var foodChainImage = new Image(250,250);
           foodChainImage.classList.add("thisPic");
           foodChainImage.src = ("./images/foodChain.png");
-          $("#user-images").append(foodChainImage);
+          $("#user-images").html(foodChainImage);
           $("#box1").css("background-color", "black");
           $("#box1").css("color", "black");
         } 
@@ -98,10 +102,59 @@ $(document).ready(function() {
     })
     $("#bluePoster").on("click", function() {
       $("#user-message").html("You are looking at the 'Blue' Poster<br/>Hmmm...Da fuq?");
+      $("#user-images").html("Think you know what goes in each empty box?");
+      $blank1 = $("<form autocomplete = 'off'></form>");
+      $blank1.addClass("blankGuess1");
+      $blank1.append("<div id = firstGuess><input class = 'checkGuess' type = 'text' ></input></div>");
+      $("#user-images").append($blank1);
+      $blank2 = $("<form autocomplete = 'off'></form>");
+      $blank2.addClass("blankGuess2");
+      $blank2.append("<div id = secondGuess><input class = 'checkGuess2' type = 'text' ></input></div>");
+      $("#user-images").append($blank2);
+      $blank3 = $("<form autocomplete = 'off'></form>");
+      $blank3.addClass("blankGuess3");
+      $blank3.append("<div id = thirdGuess><input class = 'checkGuess3' type = 'text' ></input></div>");
+      $("#user-images").append($blank3);
+      $blank4 = $("<form autocomplete = 'off'></form>");
+      $blank4.addClass("blankGuess4");
+      $blank4.append("<div id = fourthGuess><input class = 'checkGuess4' type = 'text' ></input></div>");
+      $("#user-images").append($blank4);
+      $blank5 = $("<form autocomplete = 'off'></form>");
+      $blank5.addClass("blankGuess5");
+      $blank5.append("<div id = fifthGuess><input class = 'checkGuess5' type = 'text' ></input></div>");
+      $("#user-images").append($blank5);
+
+
+      $button3 = $("<button type = 'submit'>Enter</button>");
+      $button3.addClass("submitGuess10 mt-2");
+      $("#user-images").append($button3);
+
+      $(".submitGuess10").on("click", function() {
+        var firstAnswer = "eagle";
+        var secondAnswer = "snake";
+        var thirdAnswer = "frog";
+        var fourthAnswer = "grasshopper";
+        var fifthAnswer = "grass";
+
+      var firstUserGuess = $('.checkGuess').val().trim().toLowerCase();
+      var secUserGuess = $('.checkGuess2').val().trim().toLowerCase();
+      var thirdUserGuess = $('.checkGuess3').val().trim().toLowerCase();
+      var fourthUserGuess = $('.checkGuess4').val().trim().toLowerCase();
+      var fifthUserGuess = $('.checkGuess5').val().trim().toLowerCase();
+
+      if (firstUserGuess === firstAnswer && secUserGuess === secondAnswer && thirdUserGuess === thirdAnswer && fourthAnswer === fourthUserGuess && fifthUserGuess === fifthAnswer) {
+        $("#user-images").html("Wow! You got it!")
+      }
+        else {
+          $("#user-images").append("<br/>Not quite right. Try again!");
+        }
+      })
+      
+
         var bluePosterImage = new Image(250,250);
         bluePosterImage.classList.add("thisPic");
         bluePosterImage.src = ("./images/bluePoster.png");
-        $("#user-images").append(bluePosterImage);
+        $("#user-message").append(bluePosterImage);
      
     })
     $("#rug").on("click", function() {
@@ -109,15 +162,41 @@ $(document).ready(function() {
       var keyImage = new Image(250,250);
         keyImage.classList.add("thisPic");
         keyImage.src = ("./images/key.png");
-        $("#user-images").append(keyImage);
+        $("#user-images").html(keyImage);
     })
-    $("#object7").on("click", function() {
-      $("#user-message").html("You clicked on Object 7");
-      $("#user-images").html("A Pic will Show Here")
-    })
-    $("#object8").on("click", function() {
-      $("#user-message").html("You clicked on Object 8");
-      $("#user-images").html("A Pic will Show Here")
+    // $("#object7").on("click", function() {
+    //   $("#user-message").html("You clicked on Object 7");
+    //   $("#user-images").html("A Pic will Show Here")
+    // })
+    $("#desk").on("click", function() {
+      $("#user-message").html("You are checking out this desk.<br/>You see this map on top of it.<br/>There are three drawers.<br/>The top one is locked!<br/>Do you have a key?<br/>");
+      $yesButton = $("<button type = 'submit'>Yes</button>");
+      $yesButton.addClass("yes mt-2 mr-2");
+      $("#user-message").append($yesButton);
+      $noButton = $("<button type = 'submit'>No</button>");
+      $noButton.addClass("no mt-2");
+      $("#user-message").append($noButton);
+      $(".yes").on("click", function() {
+        $("#user-message").text("Awesome! It opened! You found this bunch of word plates inside:")
+        ;
+        var wordsImage = new Image(250,250);
+        wordsImage.classList.add("thisPic");
+        wordsImage.src = ("./images/wordplates.png");
+        $("#user-message").append(wordsImage);
+      })
+      $(".no").on("click", function() {
+        $("#user-message").text("Sucks to suck...go find one.")
+      })
+
+      var mapImage = new Image(250,250);
+        mapImage.classList.add("thisPic");
+        mapImage.src = ("./images/map.png");
+        $("#user-images").html(mapImage);
+        var deskImage = new Image(250,250);
+        deskImage.classList.add("thisPic");
+        deskImage.src = ("./images/desk.png");
+        $("#user-images").append(deskImage);
+      
     })
     $("#object9").on("click", function() {
       $("#user-message").html("You clicked on Object 9");
