@@ -68,7 +68,7 @@ $(document).ready(function() {
       $("#user-images").html(circleTableImage);
     })
     $("#box1").on("click", function() {
-      $("#user-message").html("You clicked on this Box.<br/>But it's locked :/");
+      $("#user-message").html("You tried to open this Box.<br/>But it's locked :/");
       $form = $("<form autocomplete = 'off'></form>");
       $form.addClass("guessForm");
       $form.append("<div id = codeCheck>Enter 6-digit code: <input class = 'checkCode' type = 'numeric' maxlength = '6' size = '6'></input></div>");
@@ -104,9 +104,12 @@ $(document).ready(function() {
         $("#user-images").append(bluePosterImage);
      
     })
-    $("#object6").on("click", function() {
-      $("#user-message").html("You clicked on Object 6");
-      $("#user-images").html("A Pic will Show Here")
+    $("#rug").on("click", function() {
+      $("#user-message").html("You looked under the rug!<br>You found a key!");
+      var keyImage = new Image(250,250);
+        keyImage.classList.add("thisPic");
+        keyImage.src = ("./images/key.png");
+        $("#user-images").append(keyImage);
     })
     $("#object7").on("click", function() {
       $("#user-message").html("You clicked on Object 7");
@@ -142,6 +145,32 @@ $(document).ready(function() {
       doorImage.classList.add("thisPic");
       doorImage.src = ("./images/doorCode.jpg");
       $("#user-images").html(doorImage);
+
+      $form2 = $("<form autocomplete = 'off'></form>");
+      $form2.addClass("guessForm2");
+      $form2.append("<div id = codeCheck2>Enter 6-digit code: <input class = 'checkCode2' type = 'numeric' maxlength = '6' size = '6'></input></div>");
+      $("#user-message").append($form2);
+      $button2 = $("<button type = 'submit'>Enter</button>");
+      $button2.addClass("enterCode2 mt-2");
+      $("#user-message").append($button2);
+      $(".enterCode2").on("click", function() {
+        var theAnswer2 = "111111";
+        var userGuess2 = $(".checkCode2").val();
+        console.log(theAnswer2);
+        console.log(userGuess2);
+        if (theAnswer2 === userGuess2) {
+          $("#user-message").empty();
+          $("#user-message").append("<br/>YOU HAVE ESCAPED!");
+          var winner = new Image(250,250);
+          winner.classList.add("thisPic");
+          winner.src = ("./images/congrats.png");
+          $("#user-images").html(winner);
+          
+        } 
+        else {
+          $("#user-message").append("<br/>Nah, you suck! Try again...")
+        }
+      })
     })
     $("#object15").on("click", function() {
       $("#user-message").html("You clicked on Object 15");

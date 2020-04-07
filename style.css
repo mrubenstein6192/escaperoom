@@ -38,7 +38,7 @@
   width:50px;
   margin-left: 200px;
   margin-top: 25px;
-  background-color: rgb(39, 15, 2);
+  background-color: rgb(68, 26, 3);
   color: white;
 }
 #table1:hover {
@@ -54,7 +54,7 @@
   height:60px;
   margin-left: 100px;
   margin-top: 15px;
-  background-color: rgb(39, 15, 2);
+  background-color: rgb(70, 27, 4);
   color: white;
 }
 #circleTable:hover {
@@ -95,6 +95,24 @@
   background-color: yellow;
   color: black;
 }
+
+#rug {
+  border-style: solid;
+  border-color: black;
+  width:120px;
+  height:80px;
+  margin-left: 130px;
+  background-color: lightslategray;
+  color: black;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#rug:hover {
+  background-color: yellow;
+  color: black;
+}
+
 #door {
   /* border-style: solid;
  
