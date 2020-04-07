@@ -46,7 +46,7 @@ $(document).ready(function() {
     $("#welcome").hide();
     $("#main-container").show();
     $("#poster1").on("click", function() {
-      $("#user-message").html("You clicked on Poster 1");
+      $("#user-message").html("You are looking at Poster 1.");
       var poster1Image = new Image(250,250);
       poster1Image.classList.add("thisPic");
       poster1Image.src = ("./images/poster1.png");
@@ -54,19 +54,43 @@ $(document).ready(function() {
      
     })
     $("#table1").on("click", function() {
-      $("#user-message").html("You clicked on Object 2");
+      $("#user-message").html("You are looking at the table.<br/>Here's what's on it.");
       var tableImage = new Image(250,250);
       tableImage.classList.add("thisPic");
       tableImage.src = ("./images/table.png");
       $("#user-images").html(tableImage);
     })
     $("#circleTable").on("click", function() {
-      $("#user-message").html("You clicked on Object 3");
-      $("#user-images").html("A Pic will Show Here")
+      $("#user-message").html("You are looking at the circle table.<br/> Here's what you see.");
+      var circleTableImage = new Image(250,250);
+      circleTableImage.classList.add("thisPic");
+      circleTableImage.src = ("./images/circleTable.png");
+      $("#user-images").html(circleTableImage);
     })
-    $("#object4").on("click", function() {
-      $("#user-message").html("You clicked on Object 4");
-      $("#user-images").html("A Pic will Show Here")
+    $("#box1").on("click", function() {
+      $("#user-message").html("You clicked on this Box.<br/>But it's locked :/");
+      $form = $("<form autocomplete = 'off'></form>");
+      $form.addClass("guessForm");
+      $form.append("<div id = codeCheck>Enter 6-digit code: <input class = 'checkCode' type = 'numeric' maxlength = '6' size = '6'></input></div>");
+      $("#user-images").html($form);
+      $button = $("<button type = 'submit'>Enter</button>");
+      $button.addClass("enterCode mt-2");
+      $("#user-images").append($button);
+      $(".enterCode").on("click", function() {
+        var theAnswer = "012447";
+        var userGuess = $(".checkCode").val();
+        console.log(theAnswer);
+        console.log(userGuess);
+        if (theAnswer === userGuess) {
+          $("#user-images").empty();
+          $("#user-images").append("<br/>Correct! Here's a thing for a new clue.")
+          $("#box1").css("background-color", "black");
+          $("#box1").css("color", "black");
+        } 
+        else {
+          $("#user-images").append("<br/>Nah, you suck! Try again...")
+        }
+      })
     })
     $("#object5").on("click", function() {
       $("#user-message").html("You clicked on Object 5");
