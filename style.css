@@ -11,6 +11,12 @@
   width: 100%;
 }
 
+
+.hover:hover {
+  background-color: yellow;
+
+}
+
 #poster1 {
   border-style: solid;
   border-radius: 3px;
@@ -18,17 +24,29 @@
   width:50px;
   margin-left: 200px;
   margin-top: 10px;
+  background-color: red;
+  color: black;
+  font-size: smaller;
 }
-#object2 {
+#poster1:hover {
+  background-color: yellow;
+}
+#table1 {
   border-style: solid;
   border-radius: 3px;
   border-color: black;
   width:50px;
   margin-left: 200px;
-  margin-top: 15px;
+  margin-top: 25px;
+  background-color: rgb(39, 15, 2);
+  color: white;
+}
+#table1:hover {
+  background-color: yellow;
+  color: black
 }
 
-#object3 {
+#circleTable {
   border-style: solid;
   border-radius: 25px;
   border-color: black;
@@ -36,4 +54,29 @@
   height:60px;
   margin-left: 100px;
   margin-top: 15px;
+  background-color: rgb(39, 15, 2);
+  color: white;
+}
+#circleTable:hover {
+  background-color: yellow;
+  color: black;
+}
+
+#door {
+  /* border-style: solid;
+ 
+  border-color: black; */
+  width:56px;
+  height:42px;
+  margin-left: 320px;
+}
+#door:hover {
+  background-color: lightgreen;
+}
+
+
+
+.hover:hover {
+  background-color: yellow;
+
 }
