@@ -66,7 +66,7 @@ $(document).ready(function() {
     })
     $("#circleTable").on("click", function() {
       $("#user-message").html("You are looking at the circle table.<br/> Here's what you see.");
-      var circleTableImage = new Image(250,250);
+      var circleTableImage = new Image(280,280);
       circleTableImage.classList.add("thisPic");
       circleTableImage.src = ("./images/circleTable.png");
       $("#user-images").html(circleTableImage);
@@ -101,7 +101,28 @@ $(document).ready(function() {
           $("#box1").css("color", "black");
         } 
         else {
-          $("#user-images").append("<br/>Nah, you suck! Try again...")
+          $("#user-images").append("<br/>Nope, you suck!<br/>You must now vote someone to be put in the Waiting Area!");
+          $lauraButton = $("<button type = 'submit'>Laura</button>");
+          $lauraButton.addClass("waitingArea mt-2 mr-2");
+          $("#user-images").append($lauraButton);
+          $zaynabButton = $("<button type = 'submit'>Zaynab</button>");
+          $zaynabButton.addClass("waitingArea mt-2 mr-2");
+          $("#user-images").append($zaynabButton);
+          $amyButton = $("<button type = 'submit'>Amy</button>");
+          $amyButton.addClass("waitingArea mt-2 mr-2");
+          $("#user-images").append($amyButton);
+          $bethyButton = $("<button type = 'submit'>Bethy</button>");
+          $bethyButton.addClass("waitingArea mt-2 mr-2");
+          $("#user-images").append($bethyButton);
+          $sarahButton = $("<button type = 'submit'>Sarah</button>");
+          $sarahButton.addClass("waitingArea mt-2 mr-2");
+          $("#user-images").append($sarahButton);
+          $mattButton = $("<button type = 'submit'>Matt</button>");
+          $mattButton.addClass("waitingArea mt-2 mr-2");
+          $("#user-images").append($mattButton);
+          $(".waitingArea").on("click", function() {
+            $("#user-images").append("<br/>Just Kidding! Try another code.")
+          })
         }
       })
     })
@@ -214,7 +235,7 @@ $(document).ready(function() {
     })
     $("#shelf").on("click", function() {
       $("#user-message").html("The shelf has a message:");
-      var invertImage = new Image(250,150);
+      var invertImage = new Image(280,170);
       invertImage.classList.add("thisPic");
       invertImage.src = ("./images/inversion.png");
       $("#user-images").html(invertImage);
