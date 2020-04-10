@@ -101,24 +101,24 @@ $(document).ready(function() {
           $("#box1").css("color", "black");
         } 
         else {
-          $("#user-images").append("<br/>Nope, you suck!<br/>You must now vote someone to be put in the Waiting Area!");
-          $lauraButton = $("<button type = 'submit'>Laura</button>");
+          $("#user-images").append("<br/>Nope, you suck!<br/>You must now vote someone to be muted for 5 minutes!");
+          $lauraButton = $("<button type = 'submit'>Sean</button>");
           $lauraButton.addClass("waitingArea mt-2 mr-2");
           $("#user-images").append($lauraButton);
-          $zaynabButton = $("<button type = 'submit'>Zaynab</button>");
+          $zaynabButton = $("<button type = 'submit'>Emily</button>");
           $zaynabButton.addClass("waitingArea mt-2 mr-2");
           $("#user-images").append($zaynabButton);
-          $amyButton = $("<button type = 'submit'>Amy</button>");
+          $amyButton = $("<button type = 'submit'>Rachael</button>");
           $amyButton.addClass("waitingArea mt-2 mr-2");
           $("#user-images").append($amyButton);
-          $bethyButton = $("<button type = 'submit'>Bethy</button>");
+          $bethyButton = $("<button type = 'submit'>Joanna</button>");
           $bethyButton.addClass("waitingArea mt-2 mr-2");
           $("#user-images").append($bethyButton);
-          $sarahButton = $("<button type = 'submit'>Sarah</button>");
+          $sarahButton = $("<button type = 'submit'>Kevin</button>");
           $sarahButton.addClass("waitingArea mt-2 mr-2");
           $("#user-images").append($sarahButton);
-          $mattButton = $("<button type = 'submit'>Matt</button>");
-          $mattButton.addClass("waitingArea mt-2 mr-2");
+          // $mattButton = $("<button type = 'submit'>Matt</button>");
+          // $mattButton.addClass("waitingArea mt-2 mr-2");
           $("#user-images").append($mattButton);
           $(".waitingArea").on("click", function() {
             $("#user-images").append("<br/>Just Kidding! Try another code.")
@@ -127,7 +127,7 @@ $(document).ready(function() {
       })
     })
     $("#bluePoster").on("click", function() {
-      $("#user-message").html("You are looking at the 'Blue' Poster<br/>Hmmm...Da fuq?");
+      $("#user-message").html("You are looking at the 'Blue' Poster<br/>Hmmm...");
       $("#user-images").html("Think you know what goes in each empty box?");
       $blank1 = $("<form autocomplete = 'off'></form>");
       $blank1.addClass("blankGuess1");
